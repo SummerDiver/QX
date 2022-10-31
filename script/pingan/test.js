@@ -1,8 +1,10 @@
-let url = $request.url
 let obj = JSON.parse($response.body)
 
+let url = new URL($request.url)
+let searchParams = new URLSearchParams(url.search)
+
 obj.status = 1
-obj.msg = `研究生用户，${url.indexOf(`030`)}校授权有效！`
+obj.msg = `${searchParams.get(`controllerId`)}`
 
 const body = JSON.stringify(obj)
 $done({ body })
