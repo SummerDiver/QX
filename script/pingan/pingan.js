@@ -4,7 +4,7 @@ const url = new URL($request.url)
 const searchParams = new URLSearchParams(url.search)
 const controllerId = searchParams.get('controllerId')
 
-const inId = ['021', '1000006$7$0$0']
+const inId = ['021', '035', '1000006$7$0$0']
 const outId = ['030', '1000000$7$0$0', '1000011$7$0$0', '1000020$7$0$0']
 
 obj.status = 1
