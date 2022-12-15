@@ -1,6 +1,8 @@
 let obj = JSON.parse($response.body)
 
-let replenished = obj.data.calendars.filter(item => item.replenished_time)
+let data = obj.data
+let calendars = data.calendars
+let replenished = calendars.filter(item => item.replenished_time)
 
 let replenished_obj = {
   user_id: 5131078,
@@ -14,7 +16,9 @@ let replenished_obj = {
   id: "639adb2e7a7d0000a1004094"
 }
 
-obj.data.calendars.splice(replenished_obj.length, 0, replenished_obj)
+// obj.data.calendars.splice(replenished_obj.length, 0, replenished_obj)
+
+obj.data.calendars.pop()
 
 const body = JSON.stringify(obj)
 $done({ body })
